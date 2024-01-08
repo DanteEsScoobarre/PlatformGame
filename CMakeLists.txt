@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.26)
+cmake_minimum_required(VERSION 3.27)
 project(PlatformGame)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -14,13 +14,17 @@ FetchContent_Declare(
 FetchContent_Declare(
         sfml
         GIT_REPOSITORY https://github.com/SFML/SFML.git
-        GIT_TAG 2.6.0
+        GIT_TAG 2.6.1
 )
 
 FetchContent_MakeAvailable(fmt)
 FetchContent_MakeAvailable(sfml)
 
 add_executable(PlatformGame GameFiles/main.cpp
+        GameFiles/Game.h
+        GameFiles/Game.cpp
+        GameFiles/Player.cpp
+        GameFiles/Player.h
 
 
 )
