@@ -12,6 +12,7 @@ public:
     void update();
     void render();
     void renderPlayer();
+    void frameRateLimiter();
 
 private:
 sf::RenderWindow window;

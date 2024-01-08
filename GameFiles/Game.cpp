@@ -2,7 +2,7 @@
 #include "Player.h"
 #include <fmt/core.h>
 
-    Game::Game() : window(sf::VideoMode(800, 600), "Platform Game"), player(){
+    Game::Game() : window(sf::VideoMode::getDesktopMode(), "Platform Game"), player(){
 
     }
    Game::~Game(){
@@ -16,6 +16,7 @@ const sf::RenderWindow &Game::getWindow() const{
 }
 
 void Game::update() {
+    Game::frameRateLimiter();
 while (Game::window.pollEvent(Game::event)){
     if (Game::event.type == sf::Event::Closed){
         Game::window.close();
@@ -35,6 +36,10 @@ void Game::render() {
 
 void Game::renderPlayer() {
     Game::player.renderPlayer(Game::window);
+}
+
+void Game::frameRateLimiter() {
+    Game::window.setFramerateLimit(144);
 }
 
 

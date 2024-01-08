@@ -12,8 +12,10 @@ public:
 private:
     sf::Sprite sprite;
     sf::Texture textures;
+    sf::IntRect currentFrame;
     void initSprite();
     void initTextures();
+    void movement();
 
 };
 
