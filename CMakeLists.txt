@@ -25,6 +25,10 @@ add_executable(PlatformGame GameFiles/main.cpp
         GameFiles/Game.cpp
         GameFiles/Player.cpp
         GameFiles/Player.h
+        GameFiles/Tile.cpp
+        GameFiles/Tile.h
+        GameFiles/TileMap.cpp
+        GameFiles/TileMap.h
 
 
 )
