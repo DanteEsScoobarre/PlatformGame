@@ -90,8 +90,8 @@ void Player::updateAnimatons() {
 
         }
         Player::sprite.setScale(3.f, 3.f);
-        Player::sprite.setOrigin(Player::sprite.getGlobalBounds().width / 3.f, 0.f);
-    } else if (Player::currentAnimState == PlayerAnimState::MovingLeft) {
+    }
+    else if (Player::currentAnimState == PlayerAnimState::MovingRight) {
         if (Player::animationTimer.getElapsedTime().asSeconds() >= 0.11f) {
             Player::currentFrame.top = 64.f;
             Player::currentFrame.left += 32.f;
@@ -100,9 +100,9 @@ void Player::updateAnimatons() {
             }
             Player::animationTimer.restart();
             Player::sprite.setTextureRect(Player::currentFrame);
-            Player::sprite.setScale(-3.f, 3.f);
+
         }
-        Player::sprite.setOrigin(Player::sprite.getGlobalBounds().width / 3.f, 0.f);
+        Player::sprite.setScale(3.f, 3.f);
     }
 
 }
